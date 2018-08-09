@@ -9,7 +9,7 @@ data_path = './data'                                    # save your tfRecord dat
 # training set
 train_data_path = data_path+'/train.tfrecords'          # where the training data file is located
 test_data_path = data_path+'/test_squares.tfrecords'    # where the testing data file is located
-n_train_samples = 100000                                # number of different stimuli in an epoch
+n_train_samples = 1000                                  # number of different stimuli in an epoch
 batch_size = 64                                         # stimuli per batch
 buffer_size = 1024                                      # number of stimuli simultaneously in memory (I think).
 n_epochs = 50                                           # number of epochs
