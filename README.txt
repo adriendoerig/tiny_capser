@@ -32,7 +32,7 @@ During training, lots of stuff is displayed in tensorboard (tensorflow's network
 After training, look at decoded outputs and vernier decoder accuracy in tensorboard.
 
 TENSORBOARD:
-Open a terminal, cd to the model's output directory (./data/BS_64_C1DIM_16_C2DIM_16_LR_0.0005 -- the folder name actually reflects important parameters).
+Open a terminal, cd to the data directory (cd data).
 Run "tensorboard -logdir=./".
 A web browser link should appear in the terminal. Use it in your favourite browser (if it doesn't work, try a different browser).
 Tensorboard tutorial: https://www.youtube.com/watch?v=eBbEDRsCmv4&authuser=0
