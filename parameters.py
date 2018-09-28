@@ -9,14 +9,14 @@ data_path = './data'                                    # save your tfRecord dat
 # training set
 train_data_path = data_path+'/train.tfrecords'          # where the training data file is located
 test_data_path = data_path+'/test_squares.tfrecords'    # where the testing data file is located
-n_train_samples = 1000                                  # number of different stimuli in an epoch
+n_train_samples = 500000                                  # number of different stimuli in an epoch
 batch_size = 64                                         # stimuli per batch
 buffer_size = 1024                                      # number of stimuli simultaneously in memory (I think).
-n_epochs = 50                                           # number of epochs
+n_epochs = 1                                           # number of epochs
 n_steps = n_train_samples*n_epochs/batch_size           # number of training steps
 
 # testing sets
-n_test_samples = 100                                                                # number of stimuli for each testing condition
+n_test_samples = 64                                                                # number of stimuli for each testing condition
 test_stimuli = {'squares': [None, [[1]], [[1, 1, 1, 1, 1]]]}                        # see batchMaker.py if you are interested in how to sreate the stimuli
 test_filenames = [data_path+'/test_'+keys+'.tfrecords' for keys in test_stimuli]    # filenames of the .tfRecords files
 
@@ -24,12 +24,12 @@ test_filenames = [data_path+'/test_'+keys+'.tfrecords' for keys in test_stimuli]
 ### stimulus params - APPLIED WHEN YOU RUN MAKE_DATA.PY, NOT WHEN YOU RUN THE MAIN SCRIPT ###
 
 im_size = (45, 100)                             # size of full image
-shape_size = 18                                 # size of a single shape in pixels
+shape_size = 15                                 # size of a single shape in pixels
 random_size = True                              # shape_size will vary around shape_size
 random_pixels = .4                              # stimulus pixels are drawn from random.uniform(1-random_pixels,1+random_pixels). So use 0 for deterministic stimuli. see batchMaker.py
 simultaneous_shapes = 2                         # number of different shapes in an image. NOTE: more than 2 is not supported at the moment
 bar_width = 1                                   # thickness of elements' bars
-noise_level = 0.0                               # add noise
+noise_level = 0.025                               # add noise
 shape_types = [0, 1, 2, 3, 4, 5, 6, 9]          # see batchMaker.drawShape for number-shape correspondences
 group_last_shapes = 1                           # attributes the same label to the last n shapeTypes
 fixed_stim_position = None                      # put top left corner of all stimuli at fixed_position
