@@ -4,15 +4,15 @@ import random
 
 ### data  ###
 
-data_path = './data'                                    # save your tfRecord data files here
+data_path = 'gs://trying_tiny_capser'                                    # save your tfRecord data files here
 
 # training set
 train_data_path = data_path+'/train.tfrecords'          # where the training data file is located
 test_data_path = data_path+'/test_squares.tfrecords'    # where the testing data file is located
-n_train_samples = 500000                                  # number of different stimuli in an epoch
+n_train_samples = 1000                                  # number of different stimuli in an epoch
 batch_size = 64                                         # stimuli per batch
 buffer_size = 1024                                      # number of stimuli simultaneously in memory (I think).
-n_epochs = 1                                           # number of epochs
+n_epochs = 50                                           # number of epochs
 n_steps = n_train_samples*n_epochs/batch_size           # number of training steps
 
 # testing sets
